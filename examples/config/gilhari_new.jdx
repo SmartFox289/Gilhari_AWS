@@ -1,5 +1,5 @@
-JDX_DATABASE JDX:jdbc:sqlite:./config/json_example.db;USER=sa;PASSWORD=sa;JDX_DBTYPE=SQLITE;DEBUG_LEVEL=5
-JDBC_DRIVER org.sqlite.JDBC
+JDX_DATABASE JDX:jdbc:mysql://host.docker.internal:3306/gilhariawstest?useSSL=false;USER=username;PASSWORD=pwd;JDX_DBTYPE=MYSQL;DEBUG_LEVEL=5
+JDBC_DRIVER com.mysql.cj.jdbc.Driver
 
 // Hard coding of the IP address of a MySQL database instance is needed to access the database 
 // from within a docker container. Same for a Postgres database.
