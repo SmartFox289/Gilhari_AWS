@@ -2,3 +2,4 @@
 /examples/lib
 /examples/config/*.db
 /examples/config/*.jar
+/python_src/gilhari-aws-env
