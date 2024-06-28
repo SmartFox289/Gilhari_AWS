@@ -1,5 +1,10 @@
-/examples/bin
-/examples/lib
-/examples/config/*.db
-/examples/config/*.jar
-/python_src/gilhari-aws-env
+/simpleExample/examples/bin
+/simpleExample/examples/lib
+/simpleExample/examples/config/*.db
+/simpleExample/examples/config/*.jar
+/simpleExample/python_src/gilhari-aws-env
+
+/manyToManyExample/skillShare/bin
+/manyToManyExample/skillShare/lib
+/manyToManyExample/skillShare/config/*.jar
+/manyToManyExample/python_src/newvenv
