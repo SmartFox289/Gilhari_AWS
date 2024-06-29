@@ -1,4 +1,4 @@
-package com.softwaretree.jdxjsonexample.model;
+package com.mycompany.gilhari2.collabhub.model;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -13,13 +13,15 @@ import com.softwaretree.jdx.JDX_JSONObject;
  * @author Damodar Periwal
  *
  */
-public class JSON_Collaboration extends JDX_JSONObject {
+public class JSON_Project extends JDX_JSONObject {
 
-    public JSON_Collaboration() {
+    public JSON_Project() {
         super();
     }
 
-    public JSON_Collaboration(JSONObject jsonObject) throws JSONException {
+    public JSON_Project(JSONObject jsonObject) throws JSONException {
         super(jsonObject);
     }
+
+    public JSON_User[] users;  // Should be public
 }

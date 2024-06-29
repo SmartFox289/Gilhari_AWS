@@ -17,18 +17,18 @@
 After installing **Gilhari SDK** from [here](https://www.softwaretree.com/v1/products/gilhari/download-gilhari.php) follow these steps to configure Gilhari microservice.
 
 ### 1. Define and compile empty Java (container) class  
-In `src\com\softwaretree\jdxjsonexample\model` create a file `JSON_Employee.java`. Here, Employee is a conceptual name for a type of JSON object. For defining any new container class `X`, you just have to create an `X.java` file and change `JSON_Employee` to `X` at three places in the code.
+In `src\com\mycompany\gilhari2\hr\model` create a file `JSON_Employee.java`. Here, Employee is a conceptual name for a type of JSON object. For defining any new container class `X`, you just have to create an `X.java` file and change `JSON_Employee` to `X` at three places in the code.
 
 Create a `lib` directory and add `jdxtools.jar`, `json-20160212.jar` and `jxclasses.jar` which can be found in the `libs\` directory of Gilhari SDK  
 
 Compile the classes using javac for JDX ORM to use them. Command for compiling single java file (simpleExample):
 ```cmd
-javac -source 8 -target 8 -cp "lib/jxclasses.jar;lib/jdxtools.jar;lib/json-20160212.jar" -d bin src/com/softwaretree/jdxjsonexample/model/JSON_Employee.java
+javac -source 8 -target 8 -cp "lib/jxclasses.jar;lib/jdxtools.jar;lib/json-20160212.jar" -d bin src/com/mycompany/gilhari2/hr/model/JSON_Employee.java
 ```    
 
 Command for compiling all java files simultaneously `(recommended)` (manyToManyExample): 
 ```cmd
-javac -source 8 -target 8 -cp "lib/jxclasses.jar;lib/jdxtools.jar;lib/json-20160212.jar" -d bin src/com/softwaretree/jdxjsonexample/model/JSON_User.java src/com/softwaretree/jdxjsonexample/model/JSON_Project.java src/com/softwaretree/jdxjsonexample/model/JSON_Collaboration.java 
+javac -source 8 -target 8 -cp "lib/jxclasses.jar;lib/jdxtools.jar;lib/json-20160212.jar" -d bin src/com/mycompany/gilhari2/collabhub/model/JSON_User.java src/com/mycompany/gilhari2/collabhub/model/JSON_Project.java src/com/mycompany/gilhari2/collabhub/model/JSON_Collaboration.java 
 ```
 
 >Note: Use Java 8 or below for compiling, else it will create bytecode which will not be compatible with Gilhari. You can use later versions of Java elsewhere.
@@ -55,12 +55,12 @@ Finally, create a `.config` file and fill in the required fields.
 ### 3. Create a Dockerfile, build and run Docker container  
 Create a Dockerfile as shown and run the following command to build the docker image:  
 ```cmd
-docker build -t my_app_gilhari -f ./Dockerfile .
+docker build -t gilhari2_hr_aws -f ./Dockerfile .
 ```
 
 Run the docker image using the following command: 
 ```cmd
-docker run -p 80:8081 my_app_gilhari
+docker run -p 80:8081 gilhari2_hr_aws
 ```
 
 ### If there were no errors, you have configured Gilhari successfully!

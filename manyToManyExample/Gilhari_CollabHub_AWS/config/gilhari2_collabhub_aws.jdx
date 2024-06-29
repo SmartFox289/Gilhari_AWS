@@ -20,7 +20,7 @@ JDBC_DRIVER com.mysql.cj.jdbc.Driver
 // JDX_DATABASE JDX:jdbc:postgresql://host.docker.internal:5432/jdxtestdb;USER=postgres;PASSWORD=My_Postgres;JDX_DBTYPE=POSTGRES;DEBUG_LEVEL=5
 // JDBC_DRIVER org.postgresql.Driver
 
-JDX_OBJECT_MODEL_PACKAGE com.softwaretree.jdxjsonexample.model
+JDX_OBJECT_MODEL_PACKAGE com.mycompany.gilhari2.collabhub.model
 ;
 REM ************************************************************************
 

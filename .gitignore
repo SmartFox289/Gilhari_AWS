@@ -1,10 +1,10 @@
-/simpleExample/examples/bin
-/simpleExample/examples/lib
-/simpleExample/examples/config/*.db
-/simpleExample/examples/config/*.jar
+/simpleExample/Gilhari2_HR_AWS/bin
+/simpleExample/Gilhari2_HR_AWS/lib
+/simpleExample/Gilhari2_HR_AWS/config/*.db
+/simpleExample/Gilhari2_HR_AWS/config/*.jar
 /simpleExample/python_src/gilhari-aws-env
 
-/manyToManyExample/skillShare/bin
-/manyToManyExample/skillShare/lib
-/manyToManyExample/skillShare/config/*.jar
+/manyToManyExample/Gilhari_CollabHub_AWS/bin
+/manyToManyExample/Gilhari_CollabHub_AWS/lib
+/manyToManyExample/Gilhari_CollabHub_AWS/config/*.jar
 /manyToManyExample/python_src/newvenv

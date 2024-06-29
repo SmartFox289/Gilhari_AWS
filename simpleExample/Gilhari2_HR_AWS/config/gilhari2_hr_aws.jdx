@@ -15,7 +15,7 @@ JDBC_DRIVER com.mysql.cj.jdbc.Driver
 // JDBC_DRIVER org.postgresql.Driver
 ;
 REM ************************************************************************
-CLASS com.softwaretree.jdxjsonexample.model.JSON_Employee TABLE Employee
+CLASS com.mycompany.gilhari2.hr.model.JSON_Employee TABLE Employee
 
   // First declare all the persistent JSON properties using VIRTUAL_ATTRIB specifications
   VIRTUAL_ATTRIB id ATTRIB_TYPE int
