@@ -14,10 +14,10 @@
 >Note: Gilhari SDK is a proprietary product of Software Tree. Usage is permitted only with a valid license.
 
 ## Setup and configuration of Gilhari
-After installing **Gilhari SDK** from [here](https://www.softwaretree.com/v1/products/gilhari/download-gilhari.php) follow these steps to configure Gilhari microservice.
+After installing **Gilhari SDK** from [here](https://www.softwaretree.com/v1/products/gilhari/download-gilhari.php) follow these steps to configure Gilhari framework for your application. 
 
 ### 1. Define and compile empty Java (container) class  
-In `src\com\mycompany\gilhari2\hr\model` create a file `JSON_Employee.java`. Here, Employee is a conceptual name for a type of JSON object. For defining any new container class `X`, you just have to create an `X.java` file and change `JSON_Employee` to `X` at three places in the code.
+In `src\com\mycompany\gilhari2\hr\model` create a file `JSON_Employee.java`. Here, Employee is a conceptual name for a type of JSON object. For defining any new container class `X`, you just have to create an `X.java` file and change `JSON_Employee` to `X` at three places in the code (as shown in manyToManyExample).
 
 Create a `lib` directory and add `jdxtools.jar`, `json-20160212.jar` and `jxclasses.jar` which can be found in the `libs\` directory of Gilhari SDK  
 
@@ -43,12 +43,14 @@ JDX_DATABASE JDX:jdbc:mysql://endpoint:port/nameOfDatabase
 
 If you are not using database present on the cloud, use `host.docker.internal` as endpoint.
 
-Also, in this directory add the database's JDBC driver as a `.jar`.  
+To learn more about the syntax and content of the `.jdx` file, refer Gilhari_README and the JDX Mannual provided in the SDK.
+
+Now, in this directory add the database's JDBC driver as a `.jar`.  
 
 > Gilhari framework ships three commonly used JDBC drivers in the directory `/node/node_modules/jdxnode/external_libs`  
 But it is recommended to download and use the latest JDBC driver for your database.
 
-Add a file `.js` file in `config` to map "Employees" to the defined Employee container class. Repeat this for all the classes.
+Add a file `.js` file in `config` to map "Employees" to the defined Employee container class. Repeat this for all the classes (shown in manyToManyExample).
 
 Finally, create a `.config` file and fill in the required fields.
 
@@ -63,11 +65,18 @@ Run the docker image using the following command:
 docker run -p 80:8081 gilhari2_hr_aws
 ```
 
+If you are facing errors while running the docker container, try reading the error messages and search for fixes on the internet.
+
 ### If there were no errors, you have configured Gilhari successfully!
 ### Gilhari is now running on your localhost and you can make API calls through Postman.
 
 >You an refer the Gilhari documentation for more information on the configuration process and the `.config` file and its fields.
 
+## Steps to change the RDBMS 
+To switch you RDBMS, you only need to make these 3 simple changes:  
+1. Install the JDBC driver for your RDBMS and add it in the `config` directory
+2. Change JDX_DATABASE and JDBC DRIVER information in the `.jdx` file in `config` directory 
+3. Update the jdbc_driver_path in `gilhari_service.config` file
 
 ## Creating Python virtual environment 
 It's always a good idea to work on a virtual environment as it isolates the work from the local machine.  
@@ -114,3 +123,7 @@ Set-ExecutionPolicy RemoteSigned -Scope CurrentUser
 
 Click [here](https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_execution_policies?view=powershell-7.4) to learn more about execution policies.
 
+## Making API calls 
+Once Gilhari is listening at the localhost, we can use Postman for making API calls. Click [here](https://www.softwaretree.com/v1/products/gilhari/gilhari-restfulAPI.php) to know more about Gilhari RESTful APIs. A comprehensive guide for API usage can be found in the API documentation provided in the SDK.
+
+We have used python scripts for making API calls using the `requests` library.
