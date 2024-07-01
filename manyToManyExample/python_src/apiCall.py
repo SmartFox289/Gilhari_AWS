@@ -12,9 +12,9 @@ def getCall(url, filterKey=None, filterVal=None, deep=None, maxObjects=None):
     # update url as per query parameters
     if filterKey != None and filterVal != None:
         url += '?filter=' + str(filterKey) + '=' + str(filterVal)
-    if deep != None:
+    elif deep != None:
         url += '?deep=' + str(deep)
-    if maxObjects != None:
+    elif maxObjects != None:
         url += '?maxObjects=' + str(maxObjects)
 
     try: 
