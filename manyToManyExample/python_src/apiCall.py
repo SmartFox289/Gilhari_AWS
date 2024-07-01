@@ -4,9 +4,19 @@ import json
 userUrl = 'http://localhost:80/gilhari/v1/user/'
 projectUrl = 'http://localhost:80/gilhari/v1/project/'
 collaborationUrl = 'http://localhost:80/gilhari/v1/collaboration/'
+stop_url = 'http://localhost:80/gilhari/v1/quit/now'
 
 
-def getCall(url):
+def getCall(url, filterKey=None, filterVal=None, deep=None, maxObjects=None):
+
+    # update url as per query parameters
+    if filterKey != None and filterVal != None:
+        url += '?filter=' + str(filterKey) + '=' + str(filterVal)
+    if deep != None:
+        url += '?deep=' + str(deep)
+    if maxObjects != None:
+        url += '?maxObjects=' + str(maxObjects)
+
     try: 
         response = requests.get(url)
 
@@ -53,3 +63,4 @@ with open('collaborationData.json', 'r') as f:
     jsonData = json.load(f) 
 postCall(collaborationUrl, jsonData)
 
+getCall(stop_url)
