@@ -8,11 +8,12 @@ This repository demonstrates the use of the Gilhari microservice framework in si
 
 We have shown two scenerios to describe the use of Gilhari:
 
-**simpleExample:**  
-This part of the project uses an object model consisting of objects of type Employee. It shows the use of the Gilhari microservice to exchange JSON data for a simple object model with a (local or AWS) database.
+### **simpleExample:**  
+This example illustrates a simple case of **HR management**, where employee details are stored in a relational database. This part of the project utilizes an object model consisting of Employee objects and demonstrates the use of the Gilhari microservice to exchange JSON data for a **simple** object model with a (local or AWS) database.
 
-**manyToManyExample:**  
-This part of the project uses an object model consisting of many-to-many relationship between objects of type User and Project. It demonstrates the use of Gilhari microservice for managing the exchange of JSON data for a complex object model with a (local or AWS) database.
+### **manyToManyExample:**  
+
+The many-to-many example showcases a **collaboration portal** where multiple users collaborate on various projects, creating a many-to-many relationship between users and projects. This part of the project uses an object model that includes a many-to-many relationship between User and Project objects. It demonstrates the use of Gilhari microservice to manage the exchange of JSON data for a **complex** object model with a (local or AWS) database.
  
 ## Softwares, Services and Packages used 
 
@@ -102,9 +103,14 @@ To switch your RDBMS (or your cloud platform), you only need to make these 3 sim
 2. Change JDX_DATABASE and JDBC DRIVER information in the `.jdx` file in `config` directory 
 3. Update the jdbc_driver_path in `gilhari_service.config` file
 
-## Creating Python virtual environment  
+# Setting the project environment   
+The two examples shown also contains Python scrips to generate dummy data through `faker` package and populate it into the database by making API calls through `requests` package.  
 
-We have used Python scrips to generate the dummy data through `faker` package and populate it into the database by making API calls through `requests` package.
+Install the latest version of Python from official sources.
+
+The `data_generator.py` file generates dummy data and stores them into `.json` files. The `api_call.py` file contains script for making api calls while reading data from the json files.
+
+## Creating Python virtual environment  
 
 It's always a good idea to work on a virtual environment as it isolates the packages from the local machine.  
 To create a virtual environment named `newvenv` use the following command in your terminal: 
@@ -152,3 +158,17 @@ Click [here](https://learn.microsoft.com/en-us/powershell/module/microsoft.power
 
 ## Making API calls 
 Once Gilhari is listening at the localhost, we can use Postman for making API calls. Click [here](https://www.softwaretree.com/v1/products/gilhari/gilhari-restfulAPI.php) to know more about Gilhari RESTful APIs. A comprehensive guide for API usage can be found in the API documentation provided in the SDK.
+
+## Running python scripts
+
+To run the python scripts use the following command:
+
+```cmd
+python data_generator.py
+```
+```cmd
+python transform.py
+```
+```cmd
+python api_call.py
+```
