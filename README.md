@@ -108,8 +108,6 @@ The two examples shown also contains Python scrips to generate dummy data throug
 
 Install the latest version of Python from official sources.
 
-The `data_generator.py` file generates dummy data and stores them into `.json` files. The `api_call.py` file contains script for making api calls while reading data from the json files.
-
 ## Creating Python virtual environment  
 
 It's always a good idea to work on a virtual environment as it isolates the packages from the local machine.  

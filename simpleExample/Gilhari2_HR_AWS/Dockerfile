@@ -4,7 +4,7 @@
 # and the appropriate environment varaibles (JX_HOME, NODE_PATH) set.
 
 FROM dperiwal/st_repo:gilhari
-#FROM gilhari:0.8
+
 WORKDIR /opt/gilhari_simple_example
 
 ADD bin ./bin
