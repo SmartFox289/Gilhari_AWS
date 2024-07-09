@@ -29,6 +29,8 @@ To use Gilhari, please ensure you have installed the following:
 8. **requests:** (optional) python library for making REST API calls through python script
 9. **faker:** (optional) python library for creating dummy data 
 
+To work with Gilhari, you need to configure it for your application.
+
 ## Setup and configuration of Gilhari
 You can install **Gilhari SDK** from [here](https://www.softwaretree.com/v1/products/gilhari/download-gilhari.php) and follow these steps to configure Gilhari framework for your application. 
 
@@ -97,11 +99,14 @@ If you are facing errors while running the docker container, try reading the err
 
 >You an refer the Gilhari documentation for more information on the configuration process and the `.config` file and its fields.
 
-## Steps to change the RDBMS
-To switch your RDBMS (or your cloud platform), you only need to make these 3 simple changes:  
+## Steps to change the RDBMS (or cloud platform)
+To switch your RDBMS, you only need to make these 3 simple changes:  
 1. Install the JDBC driver for your RDBMS and add it in the `config` directory
 2. Change JDX_DATABASE and JDBC DRIVER information in the `.jdx` file in `config` directory 
-3. Update the jdbc_driver_path in `gilhari_service.config` file
+3. Update the `jdbc_driver_path`, `db_username` and `db_password` in `.config` file
+
+## Working on AWS  
+First create an account on AWS, then search `RDS` and create a DB Instance. You can get the endpoint for connection in the `Connectivity and Security` tab. Now follow the three steps for changing the RDBMS given above.
 
 # Setting the project environment   
 The two examples shown also contains Python scrips to generate dummy data through `faker` package and populate it into the database by making API calls through `requests` package.  
