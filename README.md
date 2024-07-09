@@ -105,7 +105,9 @@ To switch your RDBMS, you only need to make these 3 simple changes:
 2. Change JDX_DATABASE and JDBC DRIVER information in the `.jdx` file in `config` directory 
 3. Update the `jdbc_driver_path`, `db_username` and `db_password` in `.config` file
 
-## Working on AWS  
+## Switching to AWS database  
+Till now, we were using a database on our local machines. But, Gilhari can be used for databases on cloud platforms also. 
+
 First create an account on AWS, then search `RDS` and create a DB Instance. You can get the endpoint for connection in the `Connectivity and Security` tab. Now follow the three steps for changing the RDBMS given above.
 
 # Setting the project environment   
