@@ -1,13 +1,13 @@
 import requests 
 import json 
 
-userUrl = 'http://localhost:80/gilhari/v1/user/'
-projectUrl = 'http://localhost:80/gilhari/v1/project/'
-collaborationUrl = 'http://localhost:80/gilhari/v1/collaboration/'
+user_url = 'http://localhost:80/gilhari/v1/user/'
+project_url = 'http://localhost:80/gilhari/v1/project/'
+collaboration_url = 'http://localhost:80/gilhari/v1/collaboration/'
 stop_url = 'http://localhost:80/gilhari/v1/quit/now'
 
 
-def getCall(url, filterKey=None, filterVal=None, deep=None, maxObjects=None):
+def get_call(url, filterKey=None, filterVal=None, deep=None, maxObjects=None):
 
     # update url as per query parameters
     if filterKey != None and filterVal != None:
@@ -32,7 +32,7 @@ def getCall(url, filterKey=None, filterVal=None, deep=None, maxObjects=None):
         print(f"Request error: {e}") 
 
 
-def postCall(url, dataDump):
+def post_call(url, dataDump):
     try: 
         headers = {'Content-type': 'application/json'}
         response = requests.post(url, json = dataDump, headers = headers)
@@ -47,20 +47,20 @@ def postCall(url, dataDump):
         print(f"Request error: {e}") 
 
 
-getCall(userUrl)
-getCall(projectUrl)
-getCall(collaborationUrl)
+get_call(user_url)
+get_call(project_url)
+get_call(collaboration_url)
 
 with open('userData.json', 'r') as f:
     jsonData = json.load(f) 
-postCall(userUrl, jsonData)
+post_call(user_url, jsonData)
 
 with open('projectData.json', 'r') as f:
     jsonData = json.load(f) 
-postCall(projectUrl, jsonData)
+post_call(project_url, jsonData)
 
 with open('collaborationData.json', 'r') as f:
     jsonData = json.load(f) 
-postCall(collaborationUrl, jsonData)
+post_call(collaboration_url, jsonData)
 
-getCall(stop_url)
+get_call(stop_url)

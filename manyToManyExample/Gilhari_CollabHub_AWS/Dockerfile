@@ -1,11 +1,11 @@
-# Creating a docker image for a RESTful server, which provides 
+# Creating a docker image for a simple RESTful server, which provides 
 # the functionality of JSON objects persistence, starting with a base image
 # (gilhari) that already has jdxnode_rest_server installed
 # and the appropriate environment varaibles (JX_HOME, NODE_PATH) set.
 
 FROM dperiwal/st_repo:gilhari
 
-WORKDIR /opt/gilhari_manytomany_example
+WORKDIR /opt/gilhari_simple_example
 
 ADD bin ./bin
 ADD config ./config

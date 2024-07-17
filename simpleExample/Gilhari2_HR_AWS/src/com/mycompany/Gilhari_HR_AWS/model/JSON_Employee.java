@@ -1,4 +1,4 @@
-package com.mycompany.gilhari2.hr.model;
+package com.mycompany.Gilhari_HR_AWS.model;
 
 import org.json.JSONException;
 import org.json.JSONObject;

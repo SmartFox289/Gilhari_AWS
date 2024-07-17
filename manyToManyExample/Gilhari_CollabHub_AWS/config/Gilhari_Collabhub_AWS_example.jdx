@@ -1,4 +1,4 @@
-JDX_DATABASE JDX:jdbc:mysql://host.docker.internal:3306/gilhariawstest?useSSL=false;USER=username;PASSWORD=pwd;JDX_DBTYPE=MYSQL;DEBUG_LEVEL=5
+JDX_DATABASE JDX:jdbc:mysql://host.docker.internal:3306/gilhariawstest?useSSL=false;USER=dperiwal;PASSWORD=secretOne;JDX_DBTYPE=MYSQL;DEBUG_LEVEL=5
 JDBC_DRIVER com.mysql.cj.jdbc.Driver
 
 // Hard coding of the IP address of a MySQL database instance or specifying "host.docker.internal" is 
@@ -20,7 +20,7 @@ JDBC_DRIVER com.mysql.cj.jdbc.Driver
 // JDX_DATABASE JDX:jdbc:postgresql://host.docker.internal:5432/jdxtestdb;USER=postgres;PASSWORD=My_Postgres;JDX_DBTYPE=POSTGRES;DEBUG_LEVEL=5
 // JDBC_DRIVER org.postgresql.Driver
 
-JDX_OBJECT_MODEL_PACKAGE com.mycompany.gilhari2.collabhub.model
+JDX_OBJECT_MODEL_PACKAGE com.mycompany.Gilhari_Collabhub_AWS.model
 ;
 REM ************************************************************************
 

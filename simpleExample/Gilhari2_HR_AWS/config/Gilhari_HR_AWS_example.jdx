@@ -1,4 +1,4 @@
-JDX_DATABASE JDX:jdbc:mysql://host.docker.internal:3306/gilhariawstest?useSSL=false;USER=username;PASSWORD=pwd;JDX_DBTYPE=MYSQL;DEBUG_LEVEL=5
+JDX_DATABASE JDX:jdbc:mysql://host.docker.internal:3306/gilhariawstest?useSSL=false;USER=dperiwal;PASSWORD=secretOne;JDX_DBTYPE=MYSQL;DEBUG_LEVEL=5
 JDBC_DRIVER com.mysql.cj.jdbc.Driver
 
 // Hard coding of the IP address of a MySQL database instance is needed to access the database 
@@ -15,7 +15,7 @@ JDBC_DRIVER com.mysql.cj.jdbc.Driver
 // JDBC_DRIVER org.postgresql.Driver
 ;
 REM ************************************************************************
-CLASS com.mycompany.gilhari2.hr.model.JSON_Employee TABLE Employee
+CLASS com.mycompany.Gilhari_HR_AWS.model.JSON_Employee TABLE Employee
 
   // First declare all the persistent JSON properties using VIRTUAL_ATTRIB specifications
   VIRTUAL_ATTRIB id ATTRIB_TYPE int
@@ -31,3 +31,4 @@ CLASS com.mycompany.gilhari2.hr.model.JSON_Employee TABLE Employee
   PRIMARY_KEY id
   SQLMAP FOR compensation COLUMN_NAME salary
 ;
+

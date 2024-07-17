@@ -31,30 +31,30 @@ To use Gilhari, please ensure you have installed the following:
 
 To work with Gilhari, you need to configure it for your application.
 
-## Setup and configuration of Gilhari
+# Setup and configuration of Gilhari
 You can install **Gilhari SDK** from [here](https://www.softwaretree.com/v1/products/gilhari/download-gilhari.php) and follow these steps to configure Gilhari framework for your application. 
 
-### 1. Define and compile empty Java (container) class  
+## 1. Define and compile empty Java (container) class  
 
 To use Gilhari, we first define empty Java (container) classes for each conceptual type of the JSON objects (domain model classes) used in our application.
 
-In `src\com\mycompany\gilhari2\hr\model` we create a file `JSON_Employee.java`. Here, Employee is a conceptual name for a type of JSON object. For defining any new container class `X`, you just have to create an `X.java` file and change `JSON_Employee` to `X` at three places in the code (as shown in manyToManyExample).
+In `src\com\mycompany\Gilhari_HR_AWS\model` we create a file `JSON_Employee.java`. Here, Employee is a conceptual name for a type of JSON object. For defining any new container class `X`, you just have to create an `X.java` file and change `JSON_Employee` to `X` at three places in the code (as shown in manyToManyExample).
 
 JAR files shipped with Gilhari SDK in the `libs\` directory are necessary to compile the Java files we have created. So, we create a `lib` directory and add `jdxtools.jar`, `json-20160212.jar` and `jxclasses.jar` in it. 
 
 Now we compile the classes using javac for JDX ORM to use them. Command for compiling single java file (simpleExample):
 ```cmd
-javac -source 8 -target 8 -cp "lib/jxclasses.jar;lib/jdxtools.jar;lib/json-20160212.jar" -d bin src/com/mycompany/gilhari2/hr/model/JSON_Employee.java
+javac -source 8 -target 8 -cp "lib/jxclasses.jar;lib/jdxtools.jar;lib/json-20160212.jar" -d bin src/com/mycompany/Gilhari_HR_AWS/model/JSON_Employee.java
 ```    
 
 Command for compiling all java files simultaneously `(recommended)` (manyToManyExample): 
 ```cmd
-javac -source 8 -target 8 -cp "lib/jxclasses.jar;lib/jdxtools.jar;lib/json-20160212.jar" -d bin src/com/mycompany/gilhari2/collabhub/model/JSON_User.java src/com/mycompany/gilhari2/collabhub/model/JSON_Project.java src/com/mycompany/gilhari2/collabhub/model/JSON_Collaboration.java 
+javac -source 8 -target 8 -cp "lib/jxclasses.jar;lib/jdxtools.jar;lib/json-20160212.jar" -d bin src/com/mycompany/Gilhari_Collabhub_AWS/model/JSON_User.java src/com/mycompany/Gilhari_Collabhub_AWS/model/JSON_Project.java src/com/mycompany/Gilhari_CollabHub_AWS/model/JSON_Collaboration.java 
 ```
 
 >Note: Use JDK 1.8 (Java 8) for compatibility with the Gilhari runtime, as Gilhari is designed to work with Java 8 features and bytecode, providing stable and reliable operation within this version.
 
-### 2. Define a Object Relational Mapping (ORM) specification  
+## 2. Define a Object Relational Mapping (ORM) specification  
 
 Now we define a declarative Object Relational Mapping (ORM) specification on those domain model classes mapping attributes of the conceptual JSON objects to the corresponding relational artifacts.
 
@@ -78,7 +78,7 @@ To make our work simpler, we map "Employees" to the defined Employee container c
 
 Finally, create a `.config` file and fill in the required fields. It contains necessary configuration details for making connections to the database, debugging, ports, etc.
 
-### 3. Create a Dockerfile, build and run Docker container  
+## 3. Create a Dockerfile, build and run Docker container  
 
 The Gilhari microservice runs in a Docker container. We first need to build a docker image by combining various artifacts of our application.
 
@@ -98,6 +98,24 @@ If you are facing errors while running the docker container, try reading the err
 ### Gilhari is now running on your localhost and you can make API calls through Postman.
 
 >You an refer the Gilhari documentation for more information on the configuration process and the `.config` file and its fields.
+
+Before proceeding forward, it is important to remove the old and failed docker images to keep the system clean. 
+
+To remove docker images use the following commands:
+
+```cmd
+docker container prune
+```
+
+```cmd
+docker image rm imageid
+```
+
+Sometimes images have to be forcefully removed using:
+
+```cmd
+docker rmi image_repository:image_tag
+```
 
 ## Steps to change the RDBMS (or cloud platform)
 To switch your RDBMS, you only need to make these 3 simple changes:  

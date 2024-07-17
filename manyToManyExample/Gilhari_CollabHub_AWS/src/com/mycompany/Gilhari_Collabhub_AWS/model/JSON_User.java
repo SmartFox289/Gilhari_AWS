@@ -1,4 +1,4 @@
-package com.mycompany.gilhar2.collabhub.model;
+package com.mycompany.Gilhari_Collabhub_AWS.model;
 
 import org.json.JSONException;
 import org.json.JSONObject;
