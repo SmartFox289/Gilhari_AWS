@@ -2,11 +2,11 @@
 
 ## Overview  
  
-Gilhari microservice framework is a product of **Software Tree**. Gilhari, available in a Docker image, is configurable as per an application specific object and relational models. Gilhari makes it easy to interact with the database by exposing a REST interface. It provides APIs (POST, GET, PUT, DELETE) that let you perform CRUD (Create, Read, Update, and Delete) operations on your application specific JSON objects.It eliminates the need to write any code to handle the REST APIs or to access the database. You can get more information about Gilhari at https://www.softwaretree.com. 
+Gilhari microservice framework is a product of **Software Tree**. Gilhari, available in a Docker image, is configurable as per an application specific object and relational models. Gilhari makes it easy to interact with the database by exposing a REST interface. It provides APIs (POST, GET, PUT, DELETE) that let you perform CRUD (Create, Read, Update, and Delete) operations on your application specific JSON objects.It eliminates the need to write any code to handle the REST APIs or to access the database. You can get more information about Gilhari at [their website](https://www.softwaretree.com) and [this article](https://medium.com/@vishal.msmukundhan/972c5fd3f64b). 
 
 This repository demonstrates the use of the Gilhari microservice framework in simplifying transferring of JSON data to and from a relational database. In addition to showing the functionality using a local MySQL database, it also shows the same functionality using a cloud database on AWS. While we have used MySQL and AWS, Gilhari is compatible with various other RDBMS and cloud platforms.
 
-We have also shown how to deploy Gilhari on AWS.
+For deploying Gilhari on AWS, follow [this article](https://medium.com/@tarun_chauhan/17ee4f157bc1).
 
 We have shown two scenerios to describe the use of Gilhari:
 
