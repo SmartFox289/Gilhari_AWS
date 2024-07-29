@@ -1,5 +1,7 @@
 import json 
 import random 
+import time
+import datetime 
 from faker import Faker 
 
 fake = Faker() 
@@ -24,14 +26,19 @@ def generateProjectRecord(projectId):
     projId = projectId
     projectName = fake.catch_phrase()
     version = f"{random.randint(0,10)}.{random.randint(0,10)}.{random.randint(0,10)}"
-    startDate = int(round(random.uniform(3, 4), 6) * 10**11)
+
+    # generating start date and converting it into miliseconds since January 1, 1970
+    startDate = fake.date_this_decade(before_today = True, after_today = False) 
+    startDate_datetime = datetime.datetime(startDate.year, startDate.month, startDate.day)
+    startDate_milliseconds = int(time.mktime(startDate_datetime.timetuple()) * 1000)
+
     status = random.choice(["Not Started", "In Progress", "Completed", "On Hold", "Cancelled"])
     
     return {
         'projectId': projId,
         'projectName': projectName,
         'version': version,
-        'startDate': startDate,
+        'startDate': startDate_milliseconds,
         'status': status
     }
 

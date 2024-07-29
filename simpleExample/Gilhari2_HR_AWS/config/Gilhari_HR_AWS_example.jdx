@@ -30,5 +30,6 @@ CLASS com.mycompany.Gilhari_HR_AWS.model.JSON_Employee TABLE Employee
   // Now provide the rest of the mapping specification for this class
   PRIMARY_KEY id
   SQLMAP FOR compensation COLUMN_NAME salary
+  SQLMAP FOR DOB SQLTYPE DATE 
 ;
 

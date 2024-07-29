@@ -51,6 +51,7 @@ CLASS .JSON_Project TABLE Project
     // Now provide the rest of the mapping specification for this class
     PRIMARY_KEY projectId
     RELATIONSHIP users REFERENCES ArrayUsers BYVALUE WITH projectId
+    SQLMAP FOR startDate SQLTYPE DATE 
 ;
 
 JOIN_COLLECTION_CLASS ArrayGroups COLLECTION_TYPE ARRAY ELEMENT_CLASS .JSON_Project JOIN_CLASS .JSON_Collaboration
