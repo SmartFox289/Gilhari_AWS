@@ -6,6 +6,8 @@ Gilhari microservice framework is a product of **Software Tree**. Gilhari, avail
 
 This repository demonstrates the use of the Gilhari microservice framework in simplifying transferring of JSON data to and from a relational database. In addition to showing the functionality using a local MySQL database, it also shows the same functionality using a cloud database on AWS. While we have used MySQL and AWS, Gilhari is compatible with various other RDBMS and cloud platforms.
 
+We have also shown how to deploy Gilhari on AWS.
+
 We have shown two scenerios to describe the use of Gilhari:
 
 ### **simpleExample:**  
@@ -195,3 +197,6 @@ python transform.py
 ```cmd
 python api_call.py
 ```
+
+# Deploying Gilhari on AWS  
+Follow [this article](https://medium.com/@tarun_chauhan/17ee4f157bc1) for detailed steps on deploying Gilhari microservice on AWS.
